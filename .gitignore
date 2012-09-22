@@ -1,12 +1,29 @@
 # Compiled Object files
+*.obj
 *.slo
 *.lo
 *.o
 
 # Compiled Dynamic libraries
 *.so
+*.dll
+*.dylib
+*.framework
 
 # Compiled Static libraries
+*.lib
 *.lai
 *.la
 *.a
+
+# Compiled Executable files
+*.bin
+*.run
+*.exe
+*.app
+
+# Build folder
+build
+
+# Vim swamp file
+*.swp
