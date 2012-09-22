@@ -5,7 +5,7 @@ Raisin is supposed to be a C++ framework/library/tool that gives the programmer
 an easy interface to write games.
 
 *Please note that this is a work in progress project and far from finished.*
-Pull request will be refused that will not match the (un-written) guidlines of
+Pull request might be refused that will not match the (un-written) guidlines of
 the program structure.
 
 License
@@ -48,11 +48,11 @@ Technology
 Contact
 =======
 
-*Possible communication forms is currently under measures.*
+*Possible communication forms is currently under measures.*  
 **Please do not contact me on any other way about this project other than noted
 in this readme file**
 
-**Webpages:**
-[My university homepage](http://people.inf.elte.hu/juadaml/ "Ádám L. Juhász")
+**Webpages:**  
+[My university homepage](http://people.inf.elte.hu/juadaml/ "Ádám L. Juhász")  
 [My projects pages (dead)](about:blank)
 
