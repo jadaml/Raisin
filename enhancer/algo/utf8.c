@@ -61,7 +61,7 @@ int iutf8len(unsigned int i)
 	return j;
 }
 
-char* itoutf8(const int i, char* ch, size_t len)
+char* itoutf8(const int i, char** ch, size_t len)
 {
 	char* retval;
 	size_t chlen = iutf8len((unsigned int)i);
@@ -73,9 +73,13 @@ char* itoutf8(const int i, char* ch, size_t len)
 		return NULL;
 	}
 	if (ch != NULL && chlen > len) return NULL;
+	/*/  // This won't work on mac 10.8 – Test is required on other systems
 	if (ch != NULL) retval = ch;
-	// BUG: Segfaults if ch != NULL
 	else retval = calloc(chlen + 1, sizeof(char));
+	/*/
+	retval = calloc(chlen, sizeof(char));
+	if (ch != NULL) ch = &retval;
+	/**/
 	// It might become more clear, if we go from chlen - 1 to 0 instead.
 	for (int j = 0; (size_t)j < chlen; ++j)
 	{
