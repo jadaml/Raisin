@@ -13,11 +13,13 @@ extern "C" {
 
 int utf8toi(const char* ch);
 
-int cutf8len(/*const char* ch*/);
+int cutf8len(const char ch);
+
+int sutf8len(const char* ch);
 
 int iutf8len(unsigned int i);
 
-char* itoutf8(const int i, char* ch, size_t len);
+char* itoutf8(const int i, char** ch, size_t len);
 
 #ifdef __cplusplus__
 }

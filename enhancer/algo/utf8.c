@@ -31,10 +31,22 @@ int utf8toi(const char* ch)
 	}
 }
 
-int cutf8len(/* const char* ch */)
+int cutf8len(const char ch)
 {
-	// TODO
+	for (int i = 1; i <= 8; ++i)
+	{
+		if (!(ch & 1 << (8 - i)))
+			return i;
+	}
 	return -1;
+}
+
+int sutf8len(const char* ch)
+{
+	int out = cutf8len(ch[0]);
+	if (out == strlen(ch))
+		return out;
+	return 0;
 }
 
 /* Shift guide
@@ -65,6 +77,7 @@ char* itoutf8(const int i, char** ch, size_t len)
 {
 	char* retval;
 	size_t chlen = iutf8len((unsigned int)i);
+
 	// Can't work with these arguments.
 	if (chlen == 0)
 	{
@@ -80,6 +93,7 @@ char* itoutf8(const int i, char** ch, size_t len)
 	retval = calloc(chlen, sizeof(char));
 	if (ch != NULL) ch = &retval;
 	/**/
+
 	// It might become more clear, if we go from chlen - 1 to 0 instead.
 	for (int j = 0; (size_t)j < chlen; ++j)
 	{
