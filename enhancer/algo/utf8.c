@@ -38,7 +38,7 @@ int cutf8len(const char ch)
 		if (!(ch & 1 << (8 - i)))
 			return i;
 	}
-	return -1;
+	return 0;
 }
 
 int sutf8len(const char* ch)
