@@ -3,7 +3,7 @@
 
 int utf8toi(const char* ch)
 {
-	int chlen = strlen(ch);
+	int chlen = sutf8len(ch);
 	if (chlen <= 0)
 		return 0;
 	if (chlen == 1) return (int) ch[0];
