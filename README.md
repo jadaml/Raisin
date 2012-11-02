@@ -1,12 +1,10 @@
 Raisin
 ======
 
-Raisin is supposed to be a C++ framework/library/tool that gives the programmer
-an easy interface to write games.
+Raisin is a C++ tool that gives the programmer an easy interface to write games.
 
 *Please note that this is a work in progress project and far from finished.*
-Pull request might be refused that will not match the (un-written) guidlines of
-the program structure.
+Pull request will be rejected in this early stage of production.
 
 License
 -------
@@ -21,11 +19,11 @@ The initial goals of Raisin, is the followings.
 
 * Provide the common framework for all games
 * Raisin should be functional no matter how bugous is the supplied game, or how
-  much is intact.---aisin should be able to run without any support file without
-crashing with ie. a seg-fault.
+  much is intact.---raisin should be able to run without any support file
+without crashing with ie. a seg-fault.
 * A game can be scripted
 * Raisin should provide debug features for game creation.---Running Raisin
-  without a game brings up a "console"
+  without a game, will brings up a "console"
 * The game content can be any license, regardless of Raisin's license.
 * And last, but not least: PORTABLE
 
@@ -48,7 +46,8 @@ Technology
 Contact
 =======
 
-*Possible communication forms is currently under measures.*  
+E-Mail: [juadaml@inf.elte.hu](mailto:Ádám L. Juhász<juadaml@inf.elte.hu>?subject=Raisin@Github)
+
 **Please do not contact me on any other way about this project other than noted
 in this readme file**
 
