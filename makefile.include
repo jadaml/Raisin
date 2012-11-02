@@ -1,4 +1,4 @@
-SUBDIR_MAKE=${MAKE} -${MAKEFLAGS} -C `dirname $@` `basename $@`
+SUBDIR_MAKE=$(MAKE) -$(MAKEFLAGS) -C `dirname $@` `basename $@`
 CPPFLAGS=-g -W -Wall -pedantic
 CFLAGS=-std=c11
 CXXFLAGS=-std=c++11
