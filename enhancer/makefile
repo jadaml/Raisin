@@ -24,6 +24,7 @@ system/osdetect.o: .force_look
 	$(SUBDIR_MAKE)
 
 test-utf8: algo/utf8.o test/utf8.bin
+	test/utf8.bin
 
 algo/utf8.o: .force_look
 	${SUBDIR_MAKE}
