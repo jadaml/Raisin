@@ -1,0 +1,13 @@
+/// \addtogroup enhancer Enhancer
+/// These are the files & functions that are part of the Enhancer library.
+/// 
+/// \page enhancer_main Enhancer
+/// The Enhancer shared library is a set of quick&dirty function and structures
+/// set that I needed while I was coding.
+///
+/// Due to the nature of \ref index "Raisin" the library is hard-wired in the
+/// code base.
+/// 
+/// \sa
+/// - \ref enhancer
+/// - \ref index
