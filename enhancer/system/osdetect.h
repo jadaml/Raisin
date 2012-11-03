@@ -1,6 +1,8 @@
 #ifndef _OSDETECT_H
 #define _OSDETECT_H
-/**\~\file
+/**\addtogroup enhancer
+ * @{
+ * \~\file
  * Functions for OS & features detections.
  */
 
@@ -11,6 +13,7 @@ extern "C" {
 #define PLATFORM_UNKNOWN 0  ///< \~ Denotes an unknown platform.
 	                        ///< This macro is used to mark that the OS in
                             ///< question is not recognised.
+                            ///<
 #define PLATFORM_WINDOWS 2  ///< \~ Denotes a Windows platform.
                             ///< This macro is used if the current application
                             ///< is running on a Microsoft Windows system.
@@ -23,6 +26,9 @@ extern "C" {
                             ///< is running on a UNIX based system, other than
                             ///< an Apple system.
 
+	/**
+	 * @}
+	 */
 	int sys_platform();
 
 #ifdef __cplusplus
