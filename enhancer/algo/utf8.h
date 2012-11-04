@@ -102,13 +102,13 @@ int iutf8len(unsigned int i);
  *
  * \warning This function was not written as the developer intented to, and may
  * not behave in the desired manner.
- * @}
  */
 char* itoutf8(const int i, char** ch, size_t len);
 
 #ifdef __cplusplus__
 }
 #endif
+/// @}
 
 #endif
 
