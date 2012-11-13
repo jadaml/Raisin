@@ -1,17 +1,32 @@
 #include <cstdlib>
 #include <unistd.h>
 #include <cstring>
+#include <sys/stat.h>
 #include "paths.h"
 
 char* sys_conf_dir = NULL;
 char* sys_data_dir = NULL;
 
 char* _glbl_data_path = NULL;
+char* _glbl_conf_path = NULL;
 char* _user_data_path = NULL;
 char* _user_conf_path = NULL;
 char* _cwd = NULL;
 
-char* getdatapath()
+char* create_or_die(char* path)
+{
+	// Check if folder exists, and try to create it or fall back to cwd
+	stat dir_stat;
+	if (stat(_glbl_data_path, &dir_stat))
+		// TODO: Create directory
+		;
+	else if (!S_ISDIR(dir_stat.st_mode))
+		// ERROR
+		return NULL;
+	return path;
+}
+
+char* get_gdata_path()
 {
 	if (_glbl_data_path != NULL)
 		return _glbl_data_path;
@@ -22,39 +37,48 @@ char* getdatapath()
 	// Data Path can be retrieved with it's own API
 #error OS not supported yet.
 
-#elif defined unix
 	// Data Path is defined at compile time with the configure value.
-#if defined DATADIR && defined PACKAGE_TARNAME
+#elif defined unix && defined DATADIR && defined PACKAGE_TARNAME
 	_glbl_data_path = new char[strlen(DATADIR) + DIRSEPLEN + strlen(PACKAGE_TARNAME) + 1];
 
 	strcpy(_glbl_data_path, DATADIR);
 	strcpy(&(_glbl_data_path[strlen(DATADIR)]), DIRSEP);
 	strcpy(&(_glbl_data_path[strlen(DATADIR) + DIRSEPLEN]), PACKAGE_TARNAME);
+#elif defined unix
+	// TODO: check out $XDG_DATA_DIRS use `basename $0` for PACKAGE_TARNAME
 #else
 	if (_cwd == NULL) return NULL;
 
+	// The OS might not have a dedicated place to store data files.
 	_glbl_data_path = new char[strlen(_cwd) + DIRSEPLEN + 5];
 	strcpy(_glbl_data_path, _cwd);
 	strcpy(&(_glbl_data_path[strlen(_cwd)]), DIRSEP);
 	strcpy(&(_glbl_data_path[strlen(_cwd) + DIRSEPLEN]), "data");
 #endif
 
-#else
-	// The OS either does not have a dedicated place to store data files, or the
-	// app isn't installed properly, so it might be all thrown next to the
-	// applicaiton.
-	_glbl_data_path = new char[strlen(_cwd) + 1];
-	strcpy(_glbl_data_path, _cwd);
-	// If this is null, than we can use it to error report as well.
-
-#endif
-
-	// TODO: check if folder exists, and try to create it or fall back to cwd
+	if (!create_or_die(_glbl_data_path))
+		// We're screwed, but can't die.
+		_glbl_data_path = _cwd;
 
 	return _glbl_data_path;
 }
 
-char* getuserdatapath()
+char* get_gconf_path()
+{
+	if (_glbl_conf_path != NULL)
+		return _glbl_conf_path;
+
+	if (_cwd == NULL) _cwd = getcwd(NULL, 0);
+
+	// TODO
+
+	if (!create_or_die(_glbl_conf_path))
+		_glbl_conf_path = _cwd;
+
+	return _glbl_conf_path;
+}
+
+char* get_udata_path()
 {
 	if (_user_data_path != NULL)
 		return _user_data_path;
@@ -62,11 +86,14 @@ char* getuserdatapath()
 	if (_cwd == NULL) _cwd = getcwd(NULL, 0);
 
 	// TODO
+
+	if (!create_or_die(_user_data_path))
+		_user_data_path = _cwd;
 	
 	return _user_data_path;
 }
 
-char* getuserpath()
+char* get_uconf_path()
 {
 	if (_user_conf_path != NULL)
 		return _user_conf_path;
@@ -193,7 +220,8 @@ char* getuserpath()
 
 #endif
 
-	// TODO: check if folder exists, and try to create it or fall back to cwd
+	if (create_or_die(_user_conf_path))
+		_user_conf_path = _cwd;
 
 	return _user_conf_path;
 }
@@ -204,9 +232,13 @@ char* sys_getpath(int path)
 	switch(path)
 	{
 		case GLOBAL_DATA_PATH:
-			return getdatapath();
+			return get_gdata_path();
+		case GLOBAL_CONFIG_PATH:
+			return get_gconf_path();
+		case USER_DATA_PATH:
+			return get_udata_path();
 		case USER_CONFIG_PATH:
-			return getuserpath();
+			return get_uconf_path();
 		default:
 			return getcwd(NULL, 0);
 	}

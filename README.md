@@ -1,4 +1,4 @@
-# Raisin # {#mainpage}
+# Raisin Readme #
 
 Raisin is a C++ tool that gives the programmer an easy interface to write games.
 
@@ -47,5 +47,7 @@ in this readme file**
 
 **Webpages:**  
 [My university homepage](http://people.inf.elte.hu/juadaml/ "Ádám L. Juhász")  
-[My projects pages (dead)](about:blank)
+[My projects pages (dead)](about:blank)  
+[Raisin at GitHub.com](http://github.com/jadaml/Raisin)  
+[Raisin at SourceForge.net](http://sourceforge.net/projects/raisin/)  
 

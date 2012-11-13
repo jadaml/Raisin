@@ -11,3 +11,18 @@
 /// \sa
 /// - \ref enhancer
 /// - \ref index
+//
+/// \defgroup enh-algo Enhancer Algorithms
+/// \ingroup enhancer
+/// *Under developement*
+//
+/// \defgroup enh-mbc Enhancer Multibyte Algorithms
+/// \ingroup enh-algo
+/// *Under developement*
+//
+/// \defgroup enh-sys Enhancer System Detection
+/// \ingroup enh-algo
+/// Functions to explore the OS environment.
+/// These functions help to explore the OS environment, and determine paths and
+/// version of the system. It may also contain system dependent functions, that
+/// only functions on the specified system.

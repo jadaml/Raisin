@@ -1,8 +1,8 @@
 #ifndef _ENHANCER_UTF8
 #define _ENHANCER_UTF8
-/**\addtogroup enhancer
+/**\addtogroup enh-mbc
  * @{
- * \~ \file
+ * \~English \file
  * UTF-8 character codes to integer conversion algorithms.
  * This file holds definition to functions that examines given UTF-8 characters
  * stored byte-length or convert them to positive integer values or back to
@@ -21,7 +21,7 @@ extern "C" {
 // This will be in a separate multi byte handler file, if I ever write it.
 //int mbtoi(const char* ch);
 
-/**\~
+/**\~English
  * UTF-8 encoded multi-byte to integer converter.
  * This function will convert a string, that contains only one valid UTF-8
  * character to it's UNICODE code value as a positive integer.
@@ -38,7 +38,7 @@ extern "C" {
  */
 int utf8toi(const char* ch);
 
-/**\~
+/**\~English
  * Expands the byte-length from a multi-byte UTF-8 encoded character's header
  * byte.
  * This function will retrieve the length information of the header byte
@@ -57,7 +57,7 @@ int utf8toi(const char* ch);
  */
 int cutf8len(const char ch);
 
-/**\~
+/**\~English
  * Expands the byte-length from a multi-byte UTF-8 encoded character.
  * This function will retrieve the length information of the UTF-8 character
  * given as the argument.
@@ -76,7 +76,7 @@ int cutf8len(const char ch);
  */
 int sutf8len(const char* ch);
 
-/**\~
+/**\~English
  * Computes the required bytes for UNICODE code point.
  * The function will calculate the required number of bytes to store the
  * supplied integer, interpreted as a UNICODE code point.
@@ -88,7 +88,7 @@ int sutf8len(const char* ch);
  */
 int iutf8len(unsigned int i);
 
-/**\~
+/**\~English
  * Convert an integer to UTF-8 character.
  * This function will convert the supplied integer in to the supplied \c ch
  * string buffer that is of \c len sized.
@@ -105,10 +105,11 @@ int iutf8len(unsigned int i);
  */
 char* itoutf8(const int i, char** ch, size_t len);
 
+/// @}
+
 #ifdef __cplusplus__
 }
 #endif
-/// @}
 
 #endif
 
