@@ -1,29 +1,41 @@
-/// \addtogroup enhancer Enhancer
-/// These are the files & functions that are part of the Enhancer library.
-/// @{
-/// \page enhancer_main Enhancer
-/// The Enhancer shared library is a set of quick&dirty function and structures
-/// set that I needed while I was coding.
-///
-/// Due to the nature of \ref index "Raisin" the library is hard-wired in the
-/// code base.
-/// 
-/// \sa
-/// - \ref enhancer
-/// - \ref index
-//
-/// \defgroup enh-algo Enhancer Algorithms
-/// *Under developement*
-/// @{
-//
-/// \defgroup enh-mbc Enhancer Multibyte Algorithms
-/// *Under developement*
-//
-/// @}
-//
-/// \defgroup enh-sys Enhancer System Detection
-/// Functions to explore the OS environment.
-/// These functions help to explore the OS environment, and determine paths and
-/// version of the system. It may also contain system dependent functions, that
-/// only functions on the specified system.
-/// @}
+/**
+
+\addtogroup enhancer Enhancer
+These are the files & functions that are part of the Enhancer library.
+@{
+\page enhancer_main Enhancer
+The Enhancer shared library is a set of quick&dirty function and structures
+set that I needed while I was coding.
+
+Due to the nature of \ref index "Raisin" the library is hard-wired in the
+code base.
+
+\sa
+- \ref enhancer
+- \ref index
+
+\defgroup enh-tool Enhancer Tools
+Building enhancer tools.
+Tools created to support compile over more systems, with the lack of certain
+tools.
+
+\par Tools
+\ref verinc
+
+\defgroup enh-algo Enhancer Algorithms
+*Under developement*
+@{
+
+\defgroup enh-mbc Enhancer Multibyte Algorithms
+*Under developement*
+
+@}
+
+\defgroup enh-sys Enhancer System Detection
+Functions to explore the OS environment.
+These functions help to explore the OS environment, and determine paths and
+version of the system. It may also contain system dependent functions, that
+only functions on the specified system.
+@}
+
+*/

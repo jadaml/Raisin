@@ -42,7 +42,7 @@ documents about it, but more likely I write them in code finally.
 
 E-Mail: [My University-provided address](mailto:Ádám L. Juhász<juadaml@inf.elte.hu>?subject=Raisin@Github)
 
-**Please do not contact me on any other way about this project other than noted
+**Please do not contact me in any other way about this project other than noted
 in this readme file**
 
 **Webpages:**  
