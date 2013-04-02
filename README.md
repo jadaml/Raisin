@@ -1,4 +1,5 @@
-# Raisin Readme #
+Raisin Readme {#mainpage}
+=============
 
 Raisin is a C++ tool that gives the programmer an easy interface to write games.
 
